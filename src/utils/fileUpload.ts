@@ -1,6 +1,5 @@
 import { storage } from '../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { File } from 'multer';
 
 interface UploadResult {
   fileUrl: string;

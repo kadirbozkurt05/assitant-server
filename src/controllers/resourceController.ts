@@ -36,7 +36,7 @@ export const createResource = async (req: Request, res: Response): Promise<void>
         image,
         grade,
         category,
-        tags: Array.isArray(tags) ? tags : tags.split(',').map(tag => tag.trim()),
+        tags: Array.isArray(tags) ? tags : tags.split(',').map((tag: string) => tag.trim()),
         fileUrl: uploadResult.fileUrl,
         fileType: uploadResult.fileType,
         fileSize: uploadResult.fileSize
