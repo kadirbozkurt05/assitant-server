@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 // Middleware for CORS
-const allowedOrigins = ['https://assistant-server.onrender.com'];
+const allowedOrigins = ['http://localhost:5173'];
 app.use(cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps or curl requests)
