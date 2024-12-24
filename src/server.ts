@@ -7,6 +7,7 @@ import gameRoutes from './routes/gameRoutes';
 import examRoutes from './routes/examRoutes';
 import authRoutes from './routes/authRoutes';
 import userRoutes from './routes/userRoutes';
+import aiRoutes from './routes/aiRoutes';
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 // Middleware for CORS
-const allowedOrigins = ['http://localhost:5173','https://adminpanel-assistant.netlify.app','https://esma-c.netlify.app','https://esmaogretmen.com'];
+const allowedOrigins = ['http://localhost:5173','https://zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3--5173--fc837ba8.local-credentialless.webcontainer-api.io','https://esma-c.netlify.app','https://esmaogretmen.com'];
 app.use(cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps or curl requests)
@@ -39,6 +40,7 @@ app.use('/api/resources', resourceRoutes);
 app.use('/api/games', gameRoutes);
 app.use('/api/exams', examRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/ai', aiRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
