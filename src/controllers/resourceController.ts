@@ -14,8 +14,8 @@ export const createResource = async (req: Request, res: Response): Promise<void>
     }
 
     // Validate file size (5MB limit)
-    if (file.size > 5 * 1024 * 1024) {
-      res.status(400).json({ error: 'File size exceeds 5MB limit' });
+    if (file.size > 20 * 1024 * 1024) {
+      res.status(400).json({ error: 'File size exceeds 20 MB limit' });
       return;
     }
 
